@@ -690,6 +690,11 @@ class ReflectionUtilsTests {
 		assertThat(findNestedClasses(AbstractOuterClass.class))//
 				.containsExactly(AbstractOuterClass.InnerClass.class);
 
+		// OuterClass contains recursive hierarchies, but the non-matching
+		// predicate should prevent cycle detection.
+		// See https://github.com/junit-team/junit5/issues/2249
+		assertThat(ReflectionUtils.findNestedClasses(OuterClass.class, clazz -> false)).isEmpty();
+
 		// Sibling types don't actually result in cycles.
 		assertThat(findNestedClasses(StaticNestedSiblingClass.class))//
 				.containsExactly(AbstractOuterClass.InnerClass.class);
