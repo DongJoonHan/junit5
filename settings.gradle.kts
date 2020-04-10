@@ -12,6 +12,7 @@ pluginManagement {
 		id("org.asciidoctor.jvm.pdf") version "3.1.0"
 		id("me.champeau.gradle.jmh") version "0.5.0"
 		id("io.spring.nohttp") version "0.0.4.RELEASE"
+		id("org.sonarqube") version "2.7"
 	}
 }
 
