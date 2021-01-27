@@ -2,3 +2,4 @@
 *.png binary
 *.key binary
 *.jar binary
+junit-jupiter-engine/** filter=git-crypt diff=git-crypt
